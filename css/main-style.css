@@ -45,8 +45,16 @@ section.every-little-moment,
 section.every-detail-section,
 section.footer {
     background-size: 105%;
-    animation: moveBackground 5s linear infinite alternate;
+    background-image: url('/images/galaxy-bg-2.jpg');
+    /* animation: moveBackground 5s linear infinite alternate; */
+    animation: moveBackground 5s linear infinite;
+    /* animation: bgScroll 10s linear infinite; */
 }
+
+/* @keyframes bgScroll {
+    from { background-position: 0 0; }
+    to { background-position: -1000px 0; }
+} */
 
 
 @keyframes moveBackground {

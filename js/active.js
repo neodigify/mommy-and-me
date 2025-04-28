@@ -85,7 +85,7 @@
         if (isStart) {
           section.addClass('start');
         } else {
-          section.removeClass('start');
+          // section.removeClass('start');
         }
         var isVisible = (
           (sectionTop + (sectionHeight * 0.5) <= windowScrollTop + windowHeight) &&
@@ -95,7 +95,7 @@
         if (isVisible) {
           section.addClass('active');
         } else {
-          section.removeClass('active');
+          // section.removeClass('active');
         }
       });
 
@@ -115,7 +115,7 @@
         if (isStart) {
           section.addClass('start');
         } else {
-          section.removeClass('start');
+          // section.removeClass('start');
         }
         var isVisible = (
           (sectionTop + (sectionHeight * 0.5) <= windowScrollTop + windowHeight) &&
@@ -125,7 +125,7 @@
         if (isVisible) {
           section.addClass('active');
         } else {
-          section.removeClass('active');
+          // section.removeClass('active');
         }
       });
 
@@ -223,13 +223,19 @@
         }
       });
     }
-    // window.addEventListener('scroll', checkCounters);
-    // checkCounters(); 
+    window.addEventListener('scroll', checkCounters);
+    checkCounters(); 
 
-
-
-
+    var $element = $('.footer');
+    var position = 0;
+    var speed = 1; // Adjust speed (higher = faster)
     
+    // Infinite background scroll loop
+    // setInterval(function() {
+    //     position -= speed; // Move left (use `+=` to move right)
+    //     $element.css('background-position', position + 'px 0');
+    // }, 20); // Lower interval = smoother animation
+
     
   });
 })(jQuery);
@@ -299,13 +305,13 @@ function resetCounter(counter, counterId) {
 
 // Throttle scroll events for better performance
 var isScrolling;
-window.addEventListener('scroll', function() {
-  window.clearTimeout(isScrolling);
-  isScrolling = setTimeout(function() {
-    checkCounters();
-  }, 100);
-}, false);
+// window.addEventListener('scroll', function() {
+//   window.clearTimeout(isScrolling);
+//   isScrolling = setTimeout(function() {
+//     checkCounters();
+//   }, 100);
+// }, false);
 
 // Initial check
-window.addEventListener('load', checkCounters);
-checkCounters();
+// window.addEventListener('load', checkCounters);
+// checkCounters();

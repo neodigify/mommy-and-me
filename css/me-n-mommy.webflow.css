@@ -1423,6 +1423,9 @@
 }
 
 .dolna-img-main {
+  z-index: 3;
+  width: 100%;
+  position: relative;
   transform: scale(0.7);
   transition: 2s ease;
   bottom: -100px;
@@ -1432,9 +1435,6 @@
   transform: scale(1);
   opacity: 1;
   bottom: 0;
-  z-index: 3;
-  width: 100%;
-  position: relative;
 }
 
 .dolna-img-main-right {
@@ -2078,7 +2078,7 @@
   height: 32px;
   display: block;
   position: absolute;
-  inset: auto 0% -20px auto;
+  inset: auto 0% -16px auto;
   transition: 0.3s ease;
 }
 
