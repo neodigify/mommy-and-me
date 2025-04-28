@@ -475,7 +475,7 @@
   height: 95px;
 }
 
-.slider-p-img-small.img-acrive-h-slider {
+.swiper-slide-thumb-active img {
   border-style: solid;
   border-width: 2px;
 }
@@ -912,7 +912,7 @@
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
-  width: 32.22%;
+  /* width: 32.22%; */
   padding: 28px;
   display: flex;
 }

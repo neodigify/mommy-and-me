@@ -19,6 +19,17 @@ section.footer {
     */
   }
 
+  .mm-main-slider .swiper-slide img {
+    width: 100%;
+  }
+
+.mm-thumb-slider .swiper-slide {
+    cursor: pointer;
+    width: auto; }
+.mm-review-slider .swiper-slide {
+    width: 100%; }
+
+
 /* custom css */
 .form-text-field::placeholder {
   color: white !important;
