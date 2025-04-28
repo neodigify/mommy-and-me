@@ -128,6 +128,14 @@
 
     }
 
+
+    // mobile menu
+    $('.hamburger-icon').on('click', function(){
+      $('.mobile-menu-popup').addClass('active');
+    });
+    $('.close-icon-popup').on('click', function(){
+      $('.mobile-menu-popup').removeClass('active');
+    });
     // Run on load and scroll
     checkSectionVisibility();
     $(window).on('scroll', checkSectionVisibility);
@@ -180,5 +188,40 @@
       $(this).parent('.faq-question-wrap-main').find( '.faq-content-main').slideToggle();
     });
 
+    // counter
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight * 0.9) && // 90% from top
+        rect.bottom >= (window.innerHeight * 0.1) // 10% from bottom
+      );
+    }
+
+    function checkCounters() {
+      var counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        if (!counter.classList.contains('animated') && isInViewport(counter)) {
+          counter.classList.add('animated');
+          let current = 0;
+          const target = parseInt(counter.dataset.target);
+          const step = target / 100;
+          
+          const timer = setInterval(() => {
+            current += step;
+            counter.textContent = Math.floor(current);
+            if (current >= target) {
+              clearInterval(timer);
+              counter.textContent = target;
+            }
+          }, 20);
+        }
+      });
+    }
+    window.addEventListener('scroll', checkCounters);
+    checkCounters(); 
+
+
+    
   });
 })(jQuery);
+
