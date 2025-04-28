@@ -223,11 +223,89 @@
         }
       });
     }
-    window.addEventListener('scroll', checkCounters);
-    checkCounters(); 
+    // window.addEventListener('scroll', checkCounters);
+    // checkCounters(); 
 
 
+
+
+    
     
   });
 })(jQuery);
 
+// Track which counters are currently animating
+var activeCounters = {};
+
+function isInViewport(element) {
+  var rect = element.getBoundingClientRect();
+  return (
+    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.9 &&
+    rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) * 0.1
+  );
+}
+
+function checkCounters() {
+  var counters = document.querySelectorAll('.counter');
+  
+  for (var i = 0; i < counters.length; i++) {
+    var counter = counters[i];
+    var counterId = counter.id || 'counter_' + i;
+    
+    if (isInViewport(counter)) {
+      // Start counter if not already running
+      if (!activeCounters[counterId]) {
+        startCounter(counter, counterId);
+      }
+    } else {
+      // Reset counter when out of view
+      if (activeCounters[counterId]) {
+        resetCounter(counter, counterId);
+      }
+    }
+  }
+}
+
+function startCounter(counter, counterId) {
+  activeCounters[counterId] = true;
+  var current = 0;
+  var target = parseInt(counter.getAttribute('data-target'), 10);
+  var step = target / 100;
+  
+  // Clear any existing interval just in case
+  if (counter._interval) {
+    clearInterval(counter._interval);
+  }
+  
+  counter._interval = setInterval(function() {
+    current += step;
+    counter.textContent = Math.floor(current);
+    
+    if (current >= target) {
+      clearInterval(counter._interval);
+      counter.textContent = target;
+      activeCounters[counterId] = false;
+      delete counter._interval;
+    }
+  }, 20);
+}
+
+function resetCounter(counter, counterId) {
+  clearInterval(counter._interval);
+  counter.textContent = '0';
+  activeCounters[counterId] = false;
+  delete counter._interval;
+}
+
+// Throttle scroll events for better performance
+var isScrolling;
+window.addEventListener('scroll', function() {
+  window.clearTimeout(isScrolling);
+  isScrolling = setTimeout(function() {
+    checkCounters();
+  }, 100);
+}, false);
+
+// Initial check
+window.addEventListener('load', checkCounters);
+checkCounters();
