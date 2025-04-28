@@ -1,0 +1,169 @@
+/* animation */
+
+section.every-little-moment ,
+section.every-detail-section ,
+section.footer {
+    background-size: 105%;
+    animation: moveBackground 5s linear infinite alternate;
+  }
+  
+
+  @keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 30%; } /* Move horizontally to the right */
+    /*
+    You could also move vertically:
+    100% { background-position: 0 100%; }
+    Or diagonally:
+    100% { background-position: 100% 100%; }
+    */
+  }
+
+/* custom css */
+.form-text-field::placeholder {
+  color: white !important;
+  opacity: 1 !important;
+}
+.faq-paragraph-2.proxima-nova {
+  color: #2B4162 !important;
+}
+@media (min-width: 992px) and (max-width: 1240px) {
+    .main-menu-container {
+        width: 100% !important;
+    }
+    .nav-menu-container {
+        width: 38% !important;
+        grid-column-gap: 24px !important;
+    }
+    .icons-container {
+        width: 34% !important;
+    }
+}
+@media (min-width: 1201px) and (max-width: 1405px) {
+    .little-moment-img-con {
+        width: 1180px !important;
+    }
+    .little-img-text {
+        width: 300px !important;
+    }
+    .little-img {
+        width: 170px !important;
+    }
+    .moon-little {
+        top: -50px !important;
+    }
+    .megh-little {
+        left: -380px !important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    .hero-wrapper {
+        width: 1000px !important;
+    }
+    .hero-left-container {
+        width: 480px !important;
+    }
+    .hero-right-container {
+        width: 460px !important;
+    }
+    .slider-p-image {
+        width: 100% !important;
+        height: 480px !important;
+    }
+    .slider-p-all-img-con {
+        gap: 8px !important;
+    }
+    .slider-p-img-small {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    .color-container {
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+    }
+    .moon-with-megh {
+        left: -70px !important;
+    }
+    .star-with-megh {
+        right: -90px !important;
+    }
+    .certify-img-box-wrapper {
+        grid-column-gap: 12px !important;
+    }
+    .certified-wrapper {
+        width: 1000px !important;
+    }
+    .whats-img-box-wrapper {
+        width: 980px !important;
+    }
+    .whats-img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .whats-img-box-content-wrapper {
+        width: 65% !important;
+    }
+    .little-moment-img-con {
+        width: 980px !important;
+    }
+    .little-img-text {
+        width: 300px !important;
+    }
+    .little-img {
+        width: 140px !important;
+    }
+    .moon-little {
+        top: -50px !important;
+    }
+    .megh-little {
+        left: -380px !important;
+    }
+    .what-left-bg {
+        left: 100px !important;
+    }
+    .what-right-bg {
+        right: 100px !important;
+    }
+    .loved-homes-wrapper {
+        width: 980px !important;
+    }
+    .real-hom-text {
+        font-size: 16px !important;
+    }
+}
+@media (min-width: 1091px) and (max-width: 1360px) {
+    .sleep-reviews-wrapper {
+        width: 900px !important;
+    }
+    .love-blue {
+        top: 100px !important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1090px) {
+    .sleep-reviews-wrapper {
+        width: 820px !important;
+    }
+    .love-blue {
+        top: 80px !important;
+    }
+}
+@media (max-width: 375px) {
+    .little-img {
+        width: 125px !important;
+    }
+    .moon-little {
+        left: 180px !important;
+        top: 350px !important;
+    }
+    .megh-little {
+        top: 420px !important;
+    }
+}
+@media (max-width: 991px) {
+    .h4-poppins-20px-700-certify {
+        font-size: 16px !important;
+    }
+    .question-title-main, .faq-paragraph-main.proxima-nova {
+        font-size: 14px !important;
+    }
+}

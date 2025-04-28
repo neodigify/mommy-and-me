@@ -439,18 +439,23 @@
 }
 
 .right-arrow-slider {
-  width: 48.0035px;
-  height: 48.0035px;
+  width: 48px;
+  height: 48px;
   position: absolute;
-  inset: 45% auto 0% 10px;
+  z-index: 1;
+  cursor: pointer;
+  margin-top: -24px;
+  inset: 50% auto 0% 10px;
 }
 
 .left-arrow-slider {
   z-index: 1;
-  width: 48.0035px;
-  height: 48.0035px;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
   position: absolute;
-  inset: 45% 10px 0% auto;
+  inset: 50% 10px 0% auto;
+  margin-top: -24px;
 }
 
 .slider-p-all-img-con {
@@ -490,7 +495,8 @@
   z-index: 3;
   opacity: 1;
   background-color: #2b416200;
-  background-image: url('../images/evry-detail-bg.png');
+  /* background-image: url('../images/evry-detail-bg.png'); */
+  background-image: url('../images/galaxy-bg.jpg');
   background-position: 50%;
   background-repeat: repeat;
   background-size: cover;
@@ -1356,7 +1362,8 @@
 
 .every-little-moment {
   z-index: 3;
-  background-image: url('../images/evry-detail-bg.png');
+  /* background-image: url('../images/evry-detail-bg.png'); */
+  background-image: url('../images/galaxy-bg.jpg');
   background-position: 50%;
   background-size: cover;
   flex-flow: column;
@@ -1983,7 +1990,7 @@
 
 .footer {
   font-family: var(--main-font);
-  background-image: url('../images/footer-bg.png');
+  background-image: url('../images/galaxy-bg.jpg');
   background-position: 50%;
   background-size: cover;
   flex-flow: column;
