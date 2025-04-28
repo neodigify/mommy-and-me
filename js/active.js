@@ -183,6 +183,8 @@
     // accordion
     $('.faq-question-bar').on('click', function(e){
       e.preventDefault();
+      $(this).parent('.faq-question-wrap-2').toggleClass('active');
+      $(this).parent('.faq-question-wrap-2').find( '.faq-content-2').slideToggle();
       $(this).parent('.faq-question-wrap').toggleClass('active');
       $(this).parent('.faq-question-wrap').find( '.faq-content-2').slideToggle();
     });

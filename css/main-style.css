@@ -249,7 +249,7 @@ section.footer {
     }
 
     .love-blue {
-        top: 100px !important;
+        /* top: 100px !important; */
     }
 }
 
@@ -259,7 +259,7 @@ section.footer {
     }
 
     .love-blue {
-        top: 80px !important;
+        /* top: 80px !important; */
     }
 }
 
@@ -294,6 +294,11 @@ section.footer {
 }
 
 @media (max-width: 767px) {
+
+    .mm-review-slider .swiper-pagination span.swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        margin: 0 5px !important; }
 
     .mm-review-slider .swiper-pagination {
         bottom: 153px !important;

@@ -1962,7 +1962,7 @@
   transition: 0.3s ease;
   width: 24px;
 }
-
+.faq-question-wrap-2.active .plus-icon-2 ,
 .faq-question-wrap.active .plus-icon {
   transform: rotate(180deg);
 }
@@ -1973,6 +1973,7 @@
   color: var(--deep_blue);
   width: 100%;
   overflow: hidden;
+  display: none;
 }
 
 .faq-paragraph-2 {
@@ -2283,6 +2284,7 @@
 
 .plus-icon-2 {
   width: 24px;
+  transition: 0.3s ease;
 }
 
 .footer-nav-link--for-mobile {
@@ -2806,8 +2808,9 @@ section.start .wave-bg {
   }
 
   .love-blue {
-    top: 65px;
     left: -39px;
+    width: 60px;
+    height: 60px;
   }
 
   .review-slider-arrow-dot-con {
@@ -3453,13 +3456,12 @@ section.start .wave-bg {
   .moon2.for-mobile {
     display: block;
     bottom: -10px;
-    right: -30px;
   }
 
   .love-blue.for-mobile {
     width: 59px;
     height: 52px;
-    display: block;
+    /* display: block; */
     top: 52px;
   }
 
