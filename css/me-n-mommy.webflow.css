@@ -369,6 +369,7 @@
   margin-left: 0;
   margin-right: 0;
   display: flex;
+  justify-content: center;
 }
 
 ._100-night-right-container {
@@ -953,6 +954,7 @@
 }
 
 .review-card {
+  height: 100%;
   border: 2px solid var(--blue);
   background-color: var(--white);
   border-radius: 20px;
@@ -2329,6 +2331,71 @@ section.start .wave-bg {
   right: -340px;
 }
 
+
+.mobile-menu-popup {
+  transition: 1s ease;
+  z-index: 999;
+  opacity: 1;
+  text-align: left;
+  background-color: #afc2c800;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  display: block;
+  visibility: hidden;
+  position: fixed;
+  opacity: 0;
+  inset: 0% auto auto -100%;
+}
+
+.mobile-menu-popup.active {
+  opacity: 1;
+  transition: 1s ease;
+  visibility: visible;
+  inset: 0% auto auto 0%; }
+
+
+.popup-container {
+  opacity: 1;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #2b4162;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 40%;
+  max-width: 50%;
+  height: 100%;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 20px 20px 40px;
+  display: flex;
+  position: static;
+}
+
+.close-icon-popup {
+  text-align: left;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.mobile-nav-container {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 40px;
+  display: flex;
+}
+
 @media screen and (max-width: 991px) {
   .header {
     max-width: 100%;
@@ -2397,69 +2464,6 @@ section.start .wave-bg {
     margin-right: 51px;
   }
 
-  .mobile-menu-popup {
-    transition: 1s ease;
-    z-index: 999;
-    opacity: 1;
-    text-align: left;
-    background-color: #afc2c800;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 100%;
-    height: 100vh;
-    margin-left: 0;
-    margin-right: 0;
-    padding-bottom: 0;
-    padding-right: 0;
-    display: block;
-    visibility: hidden;
-    position: fixed;
-    opacity: 0;
-    inset: 0% auto auto -100%;
-  }
-
-  .mobile-menu-popup.active {
-    opacity: 1;
-    transition: 1s ease;
-    visibility: visible;
-    inset: 0% auto auto 0%; }
-
-
-  .popup-container {
-    opacity: 1;
-    text-align: left;
-    background-color: #fff;
-    border: 1px solid #2b4162;
-    flex-flow: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    width: 40%;
-    max-width: 50%;
-    height: 100%;
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 20px 20px 40px;
-    display: flex;
-    position: static;
-  }
-
-  .close-icon-popup {
-    text-align: left;
-    background-color: #fff;
-    border-radius: 5px;
-  }
-
-  .mobile-nav-container {
-    flex-flow: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    margin-top: 40px;
-    display: flex;
-  }
 
   .mobile-icon-container {
     grid-column-gap: 12px;
@@ -3234,6 +3238,8 @@ section.start .wave-bg {
 }
 
 @media screen and (max-width: 767px) {
+
+
   .icons-container {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
@@ -3443,16 +3449,6 @@ section.start .wave-bg {
     padding-bottom: 50px;
   }
 
-  .review-container {
-    grid-column-gap: 100px;
-    grid-row-gap: 100px;
-    flex-flow: row;
-    width: auto;
-  }
-
-  .review-card {
-    width: 288px;
-  }
 
   .moon2.for-mobile {
     display: block;
@@ -3468,7 +3464,6 @@ section.start .wave-bg {
   }
 
   .review-slider-arrow-dot-con {
-    width: 490px;
     position: relative;
   }
 
@@ -3476,14 +3471,14 @@ section.start .wave-bg {
     width: 30px;
     height: 30px;
     top: -194px;
-    left: 50px;
+    z-index: 2;
   }
 
   .left-arrow-slider-review {
     width: 30px;
     height: 30px;
     top: -194px;
-    right: 50px;
+    z-index: 2;
   }
 
   .add-to-cartbtn-blue-price {
@@ -4010,6 +4005,7 @@ section.start .wave-bg {
 
   .review-card {
     width: 278px;
+    margin: 0 auto;
   }
 
   .h4-poppins-20px-700-review {

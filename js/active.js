@@ -30,11 +30,15 @@
     // review slider
     const swiperRV = new Swiper('.mm-review-slider', {
       speed: 400,
-      spaceBetween: 20,
       loop: true,
+      slidesPerView: 1,
       breakpoints: {
-        640: {
+        320: {
           slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        640: {
+          slidesPerView: 2,
           spaceBetween: 20,
         },
         768: {
