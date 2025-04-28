@@ -168,5 +168,17 @@
     });
 
 
+    // accordion
+    $('.faq-question-bar').on('click', function(e){
+      e.preventDefault();
+      $(this).parent('.faq-question-wrap').toggleClass('active');
+      $(this).parent('.faq-question-wrap').find( '.faq-content-2').slideToggle();
+    });
+    $('.faq-question-bar-main').on('click', function(e){
+      e.preventDefault();
+      $(this).parent('.faq-question-wrap-main').toggleClass('active');
+      $(this).parent('.faq-question-wrap-main').find( '.faq-content-main').slideToggle();
+    });
+
   });
 })(jQuery);
