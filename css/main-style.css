@@ -45,7 +45,7 @@ section.every-little-moment,
 section.every-detail-section,
 section.footer {
     background-size: 105%;
-    background-image: url('/images/galaxy-bg-2.jpg');
+    /* background-image: url('/images/galaxy-bg-2.jpg'); */
     /* animation: moveBackground 5s linear infinite alternate; */
     animation: moveBackground 5s linear infinite;
     /* animation: bgScroll 10s linear infinite; */
