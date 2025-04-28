@@ -49,6 +49,11 @@
   position: sticky;
   top: 0;
   overflow: visible;
+  transition: 0.3s ease;
+}
+
+.header.hd-active {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.03);
 }
 
 .signup-top-bar-container {
@@ -1170,6 +1175,7 @@
 }
 
 .whats-img-box {
+  overflow: hidden;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   border-top-style: solid;
@@ -1196,9 +1202,15 @@
 }
 
 .whats-img {
-  object-fit: cover;
-  width: 140px;
-  height: 140px;
+  transform: rotate(30deg);
+  transition: 2s ease;
+  position: relative;
+  right: -200px;
+}
+
+.mm-bed-section.active .whats-img {
+  transform: rotate(0deg);
+  right: 0;
 }
 
 .mattres-mapping {
@@ -1348,6 +1360,15 @@
 }
 
 .dolna-img-main {
+  transform: scale(0.7);
+  transition: 2s ease;
+  bottom: -100px;
+}
+
+.mm-bed-section.active .dolna-img-main {
+  transform: scale(1);
+  opacity: 1;
+  bottom: 0;
   z-index: 3;
   width: 100%;
   position: relative;
@@ -2207,8 +2228,14 @@
   font-weight: 600;
   line-height: 1.4em;
 }
-
-.wave-bg {
+ .wave-bg {
+  top: -35px;
+  transition: 2s ease;
+  position: relative;
+}
+section.start .wave-bg {
+  opacity: 1;
+  top: 0;
   width: 100%;
 }
 

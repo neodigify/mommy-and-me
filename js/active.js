@@ -66,14 +66,24 @@
     // animation
     function checkSectionVisibility() {
       $('section').each(function () {
-        const section = $(this);
-        const sectionTop = section.offset().top;
-        const sectionHeight = section.outerHeight();
-        const windowHeight = $(window).height();
-        const windowScrollTop = $(window).scrollTop();
+        var section = $(this);
+        var sectionTop = section.offset().top;
+        var sectionHeight = section.outerHeight();
+        var windowHeight = $(window).height();
+        var windowScrollTop = $(window).scrollTop();
 
         // Calculate visibility (50% of the section must be visible)
-        const isVisible = (
+        var isStart = (
+          (sectionTop + (sectionHeight * 0.01) <= windowScrollTop + windowHeight) && 
+          (sectionTop + sectionHeight >= windowScrollTop)
+        );
+
+        if (isStart) {
+          section.addClass('start');
+        } else {
+          section.removeClass('start');
+        }
+        var isVisible = (
           (sectionTop + (sectionHeight * 0.5) <= windowScrollTop + windowHeight) &&
           (sectionTop + sectionHeight - (sectionHeight * 0.5) >= windowScrollTop)
         );
@@ -84,11 +94,78 @@
           section.removeClass('active');
         }
       });
+
+      $(' .mm-bed-section').each(function () {
+        var section = $(this);
+        var sectionTop = section.offset().top;
+        var sectionHeight = section.outerHeight();
+        var windowHeight = $(window).height();
+        var windowScrollTop = $(window).scrollTop();
+
+        // Calculate visibility (50% of the section must be visible)
+        var isStart = (
+          (sectionTop + (sectionHeight * 0.01) <= windowScrollTop + windowHeight) && 
+          (sectionTop + sectionHeight >= windowScrollTop)
+        );
+
+        if (isStart) {
+          section.addClass('start');
+        } else {
+          section.removeClass('start');
+        }
+        var isVisible = (
+          (sectionTop + (sectionHeight * 0.5) <= windowScrollTop + windowHeight) &&
+          (sectionTop + sectionHeight - (sectionHeight * 0.5) >= windowScrollTop)
+        );
+
+        if (isVisible) {
+          section.addClass('active');
+        } else {
+          section.removeClass('active');
+        }
+      });
+
+
     }
 
     // Run on load and scroll
     checkSectionVisibility();
     $(window).on('scroll', checkSectionVisibility);
+
+    // const observer = new IntersectionObserver((entries) => {
+    //   entries.forEach(entry => {
+    //     if (entry.isIntersecting) {
+    //       $(entry.target).addClass('start');
+    //     } else {
+    //       $(entry.target).removeClass('start');
+    //     }
+    //   });
+    // }, {threshold: 0.01}); // 5% visible threshold
+  
+    // $('section').each(function() {
+    //   observer.observe(this);
+    // });
+
+    // header active
+    const $header = $('header.header');
+    const scrollThreshold = 50;
+    let isScrolling;
+  
+    function checkScroll() {
+      if ($(window).scrollTop() > scrollThreshold) {
+        $header.addClass('hd-active');
+      } else {
+        $header.removeClass('hd-active');
+      }
+    }  
+    // Initial check
+    checkScroll();
+
+    // Optimized scroll handler
+    $(window).on('scroll', function() {
+      window.clearTimeout(isScrolling);
+      isScrolling = setTimeout(checkScroll, 100);
+    });
 
 
   });
