@@ -303,9 +303,9 @@
 }
 
 .save-10-btn {
-  color: #2b4162;
+  color: #2b4162 !important;
   text-transform: uppercase;
-  background-color: #f9cd39;
+  background-color: #f9cd39 !important;
   border-radius: 1000px;
   padding: 3px 8px;
   font-family: Nunito Sans, sans-serif;
@@ -618,9 +618,18 @@
 }
 
 .moon-every-img {
+  opacity: 0;
+  transition: 3s ease;
+  transform: rotate(-100deg);
+  position: relative;
   width: 73px;
   height: 101px;
   position: absolute;
+  inset: -75px -100px 0% auto;
+}
+.active .moon-every-img {
+  opacity: 1;
+  transform: rotate(0deg);
   inset: 15px -55px 0% auto;
 }
 
@@ -1015,7 +1024,8 @@
   width: 53px;
   height: 74px;
   position: absolute;
-  inset: auto 18px 13px auto;
+  inset: 124px 35px auto auto;
+  z-index: 2;
 }
 
 .moon2.for-mobile {
@@ -1026,7 +1036,8 @@
   width: 73px;
   height: 64px;
   position: absolute;
-  inset: 50px auto auto 20px;
+  inset: auto auto 219px 20px;
+  z-index: 2;
 }
 
 .love-blue.for-mobile {
@@ -1856,7 +1867,7 @@
   cursor: pointer;
   background-color: #0e7f4000;
   border: 1px #000;
-  border-bottom: 1px solid #facc571a;
+  border-bottom: 1px solid #2B41621A !important;
   border-radius: 0;
   padding: 14px 0;
 }

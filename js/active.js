@@ -31,7 +31,7 @@
     const swiperRV = new Swiper('.mm-review-slider', {
       speed: 400,
       spaceBetween: 20,
-      loop: false,
+      loop: true,
       breakpoints: {
         640: {
           slidesPerView: 1,
@@ -46,7 +46,10 @@
           spaceBetween: 20,
         },
       },
-      autoHeight: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -59,6 +62,34 @@
     $('.left-arrow-slider-review').on('click', function () {
       $('.review-container .swiper-button-next').trigger('click');
     });
+
+    // animation
+    function checkSectionVisibility() {
+      $('section').each(function () {
+        const section = $(this);
+        const sectionTop = section.offset().top;
+        const sectionHeight = section.outerHeight();
+        const windowHeight = $(window).height();
+        const windowScrollTop = $(window).scrollTop();
+
+        // Calculate visibility (50% of the section must be visible)
+        const isVisible = (
+          (sectionTop + (sectionHeight * 0.5) <= windowScrollTop + windowHeight) &&
+          (sectionTop + sectionHeight - (sectionHeight * 0.5) >= windowScrollTop)
+        );
+
+        if (isVisible) {
+          section.addClass('active');
+        } else {
+          section.removeClass('active');
+        }
+      });
+    }
+
+    // Run on load and scroll
+    checkSectionVisibility();
+    $(window).on('scroll', checkSectionVisibility);
+
 
   });
 })(jQuery);
