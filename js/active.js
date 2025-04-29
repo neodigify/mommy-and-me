@@ -181,18 +181,42 @@
 
 
     // accordion
-    $('.faq-question-bar').on('click', function(e){
+    // $('.faq-question-bar').on('click', function(e){
+    //   e.preventDefault();
+    //   $(this).parent('.faq-question-wrap-2').toggleClass('active');
+    //   $(this).parent('.faq-question-wrap-2').find( '.faq-content-2').slideToggle();
+    //   $(this).parent('.faq-question-wrap').toggleClass('active');
+    //   $(this).parent('.faq-question-wrap').find( '.faq-content-2').slideToggle();
+    // });
+    $('.faq-question-wrap-2 .faq-question-bar').on('click', function(e){
       e.preventDefault();
       $(this).parent('.faq-question-wrap-2').toggleClass('active');
       $(this).parent('.faq-question-wrap-2').find( '.faq-content-2').slideToggle();
-      $(this).parent('.faq-question-wrap').toggleClass('active');
-      $(this).parent('.faq-question-wrap').find( '.faq-content-2').slideToggle();
+      // $(this).parent('.faq-question-wrap').toggleClass('active');
+      // $(this).parent('.faq-question-wrap').find( '.faq-content-2').slideToggle();
     });
-    $('.faq-question-bar-main').on('click', function(e){
+    
+    $('.faq-question-wrap').on('click', function(e){
       e.preventDefault();
-      $(this).parent('.faq-question-wrap-main').toggleClass('active');
-      $(this).parent('.faq-question-wrap-main').find( '.faq-content-main').slideToggle();
+      $(this).toggleClass('active');
+      $( '.faq-content-2', this).slideToggle();
     });
+
+
+
+    // $('.faq-question-bar-main').on('click', function(e){
+    //   e.preventDefault();
+    //   $(this).parent('.faq-question-wrap-main').toggleClass('active');
+    //   $(this).parent('.faq-question-wrap-main').find( '.faq-content-main').slideToggle();
+    // });
+    $('.faq-question-wrap-main').on('click', function(e){
+      e.preventDefault();
+      $(this).toggleClass('active');
+      $(this).find( '.faq-content-main').slideToggle();
+    });
+
+
+
 
     // counter
     function isInViewport(element) {
